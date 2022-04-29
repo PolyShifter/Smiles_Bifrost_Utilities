@@ -76,14 +76,6 @@
                                     "metaName": "output",
                                     "metadata": [
                                         {
-                                            "metaName": "io_ports",
-                                            "metadata": [
-                                                {
-                                                    "metaName": "out_geometry"
-                                                }
-                                            ]
-                                        },
-                                        {
                                             "metaName": "DisplayMode",
                                             "metaType": "string",
                                             "metaValue": "2"
@@ -92,6 +84,14 @@
                                             "metaName": "LayoutPos",
                                             "metaType": "string",
                                             "metaValue": "1824.71 120"
+                                        },
+                                        {
+                                            "metaName": "io_ports",
+                                            "metadata": [
+                                                {
+                                                    "metaName": "out_geometry"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -125,21 +125,6 @@
                     "metaValue": "input"
                 },
                 {
-                    "metaName": "ViewportRect",
-                    "metaType": "string",
-                    "metaValue": "-506 -518 1013 1037"
-                },
-                {
-                    "metaName": "DisplayMode",
-                    "metaType": "string",
-                    "metaValue": "2"
-                },
-                {
-                    "metaName": "LayoutPos",
-                    "metaType": "string",
-                    "metaValue": "-116.748 1507.82"
-                },
-                {
                     "metaName": "UILayout",
                     "metaType": "string",
                     "metaValue": "{\n    \"NodeLayout\": {\n        \"hideUndeclaredPorts\": false,\n        \"items\": [\n            {\n                \"port\": \"points\"\n            },\n            {\n                \"port\": \"pivot_position\"\n            },\n            {\n                \"port\": \"degrees\"\n            },\n            {\n                \"expanded\": false,\n                \"group\": \"Display\",\n                \"items\": [\n                    {\n                        \"port\": \"shape\"\n                    },\n                    {\n                        \"port\": \"default_size\"\n                    },\n                    {\n                        \"port\": \"color\"\n                    }\n                ]\n            }\n        ]\n    }\n}\n"
@@ -153,6 +138,26 @@
                             "metaValue": "0"
                         }
                     ]
+                },
+                {
+                    "metaName": "ViewportRect",
+                    "metaType": "string",
+                    "metaValue": "799.672 -159.441 1340.58 1522.65"
+                },
+                {
+                    "metaName": "DisplayMode",
+                    "metaType": "string",
+                    "metaValue": "2"
+                },
+                {
+                    "metaName": "LayoutPos",
+                    "metaType": "string",
+                    "metaValue": "-772.147 1350.45"
+                },
+                {
+                    "metaName": "terminal_node_disabled_flags",
+                    "metaType": "string",
+                    "metaValue": "Core::Graph::terminal::diagnostic"
                 }
             ],
             "ports": [
@@ -442,8 +447,7 @@
                     },
                     "deactivatedTerminals": [
                         "Core::Graph::terminal::final",
-                        "Core::Graph::terminal::proxy",
-                        "Core::Graph::terminal::diagnostic"
+                        "Core::Graph::terminal::proxy"
                     ],
                     "metadata": [
                         {
