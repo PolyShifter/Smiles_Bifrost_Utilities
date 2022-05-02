@@ -1,0 +1,822 @@
+{
+    "header": {
+        "metadata": [
+            {
+                "metaName": "adskFileFormatVersion",
+                "metaValue": "100L"
+            }
+        ]
+    },
+    "namespaces": [],
+    "types": [],
+    "compounds": [
+        {
+            "name": "Smiles::Geometry::Points::orient_points_to_manipulator",
+            "metadata": [
+                {
+                    "metaName": "documentation",
+                    "metaType": "string",
+                    "metaValue": "../docs/orient_points_to_manipulator.md"
+                },
+                {
+                    "metaName": "icon",
+                    "metaType": "string",
+                    "metaValue": "../icons/orient_points_to_manipulator.png"
+                },
+                {
+                    "metaName": "io_nodes",
+                    "metadata": [
+                        {
+                            "metaName": "io_inodes",
+                            "metadata": [
+                                {
+                                    "metaName": "input",
+                                    "metadata": [
+                                        {
+                                            "metaName": "LayoutPos",
+                                            "metaType": "string",
+                                            "metaValue": "10 292"
+                                        },
+                                        {
+                                            "metaName": "DisplayMode",
+                                            "metaType": "string",
+                                            "metaValue": "2"
+                                        },
+                                        {
+                                            "metaName": "io_ports",
+                                            "metadata": [
+                                                {
+                                                    "metaName": "points"
+                                                },
+                                                {
+                                                    "metaName": "fraction"
+                                                },
+                                                {
+                                                    "metaName": "manipulator_position"
+                                                },
+                                                {
+                                                    "metaName": "rotation_vector"
+                                                },
+                                                {
+                                                    "metaName": "degrees"
+                                                },
+                                                {
+                                                    "metaName": "cull_points"
+                                                },
+                                                {
+                                                    "metaName": "cull_sharpness"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "metaName": "input_display",
+                                    "metadata": [
+                                        {
+                                            "metaName": "LayoutPos",
+                                            "metaType": "string",
+                                            "metaValue": "2450 191"
+                                        },
+                                        {
+                                            "metaName": "DisplayMode",
+                                            "metaType": "string",
+                                            "metaValue": "2"
+                                        },
+                                        {
+                                            "metaName": "io_ports",
+                                            "metadata": [
+                                                {
+                                                    "metaName": "length"
+                                                },
+                                                {
+                                                    "metaName": "width"
+                                                },
+                                                {
+                                                    "metaName": "height"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "metaName": "io_onodes",
+                            "metadata": [
+                                {
+                                    "metaName": "output",
+                                    "metadata": [
+                                        {
+                                            "metaName": "DisplayMode",
+                                            "metaType": "string",
+                                            "metaValue": "0"
+                                        },
+                                        {
+                                            "metaName": "LayoutPos",
+                                            "metaType": "string",
+                                            "metaValue": "3365 37"
+                                        },
+                                        {
+                                            "metaName": "io_ports",
+                                            "metadata": [
+                                                {
+                                                    "metaName": "out_points"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "metaName": "DisplayMode",
+                    "metaType": "string",
+                    "metaValue": "2"
+                },
+                {
+                    "metaName": "LayoutPos",
+                    "metaType": "string",
+                    "metaValue": "41.5198 244.354"
+                }
+            ],
+            "ports": [
+                {
+                    "portName": "points",
+                    "portDirection": "input",
+                    "portType": "Amino::Object",
+                    "portDefault": {}
+                },
+                {
+                    "portName": "fraction",
+                    "portDirection": "input",
+                    "portType": "array<float>",
+                    "portDefault": []
+                },
+                {
+                    "portName": "manipulator_position",
+                    "portDirection": "input",
+                    "portDefaultType": "Math::float3",
+                    "portDefault": {
+                        "x": "0f",
+                        "y": "0f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "portName": "rotation_vector",
+                    "portDirection": "input",
+                    "portType": "Math::float3",
+                    "portDefault": {
+                        "x": "0f",
+                        "y": "-1f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "portName": "degrees",
+                    "portDirection": "input",
+                    "portDefaultType": "float",
+                    "portDefault": "60f"
+                },
+                {
+                    "portName": "length",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "5f"
+                },
+                {
+                    "portName": "width",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "2f"
+                },
+                {
+                    "portName": "height",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "10f"
+                },
+                {
+                    "portName": "cull_points",
+                    "portDirection": "input",
+                    "portType": "bool",
+                    "portDefault": "false"
+                },
+                {
+                    "portName": "cull_sharpness",
+                    "portDirection": "input"
+                },
+                {
+                    "portName": "out_points",
+                    "portDirection": "output",
+                    "portType": "Amino::Object"
+                }
+            ],
+            "compoundNodes": [
+                {
+                    "nodeName": "axis_angle_to_quaternion",
+                    "nodeType": "Core::Math::axis_angle_to_quaternion",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "1230 301"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "create_instances",
+                    "nodeType": "Modeling::Instances::create_instances",
+                    "fanInPortNames": {
+                        "instance_geometries": [
+                            "cube_mesh"
+                        ],
+                        "preview_geometries": []
+                    },
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "3060 161"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "create_mesh_cube",
+                    "nodeType": "Modeling::Primitive::create_mesh_cube",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "2755 215"
+                        },
+                        {
+                            "metaName": "PortExpandedState",
+                            "metadata": [
+                                {
+                                    "metaName": "Transform",
+                                    "metaType": "string",
+                                    "metaValue": "0"
+                                },
+                                {
+                                    "metaName": "Dimensions",
+                                    "metaType": "string",
+                                    "metaValue": "0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "cross",
+                    "nodeType": "Core::Math::cross",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "2"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "920 174"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "cull_points",
+                    "nodeType": "Modeling::Points::cull_points",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "2"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "2433.27 -209.848"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "degrees_to_radians",
+                    "nodeType": "Core::Conversion::degrees_to_radians",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "925 370"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "get_geo_property",
+                    "nodeType": "Geometry::Properties::get_geo_property",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "1230 159"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "get_point_position",
+                    "nodeType": "Geometry::Properties::get_point_position",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "315 221"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "if",
+                    "nodeType": "Core::Logic::if",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "2755 73"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "multiply_quaternions",
+                    "nodeType": "Core::Math::multiply_quaternions",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "1535 195"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "quaternion_slerp",
+                    "nodeType": "Core::Math::quaternion_slerp",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "1840 169"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "set_geo_property",
+                    "nodeType": "Geometry::Properties::set_geo_property",
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "2145 111"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "subtract",
+                    "nodeType": "Core::Math::subtract",
+                    "multiInPortNames": [
+                        "point_position",
+                        "manipulator_position"
+                    ],
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "627 180"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "terminal",
+                    "nodeType": "Core::Graph::terminal",
+                    "fanInPortNames": {
+                        "final": [],
+                        "proxy": [],
+                        "diagnostic": [
+                            "instances"
+                        ]
+                    },
+                    "deactivatedTerminals": [
+                        "Core::Graph::terminal::final",
+                        "Core::Graph::terminal::proxy"
+                    ],
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "0"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "3365 179"
+                        }
+                    ]
+                },
+                {
+                    "nodeName": "multiply",
+                    "nodeType": "Core::Math::multiply",
+                    "multiInPortNames": [
+                        "fraction"
+                    ],
+                    "metadata": [
+                        {
+                            "metaName": "DisplayMode",
+                            "metaType": "string",
+                            "metaValue": "2"
+                        },
+                        {
+                            "metaName": "LayoutPos",
+                            "metaType": "string",
+                            "metaValue": "2140.62 -202.364"
+                        }
+                    ]
+                }
+            ],
+            "connections": [
+                {
+                    "source": "axis_angle_to_quaternion.quaternion",
+                    "target": "multiply_quaternions.first"
+                },
+                {
+                    "source": "create_instances.instances",
+                    "target": "terminal.diagnostic.instances"
+                },
+                {
+                    "source": "create_mesh_cube.cube_mesh",
+                    "target": "create_instances.instance_geometries.cube_mesh"
+                },
+                {
+                    "source": "cross.cross_product",
+                    "target": "axis_angle_to_quaternion.axis"
+                },
+                {
+                    "source": "cull_points.deleted_points",
+                    "target": "if.true_case"
+                },
+                {
+                    "source": "degrees_to_radians.radians",
+                    "target": "axis_angle_to_quaternion.radians"
+                },
+                {
+                    "source": "get_geo_property.data",
+                    "target": "quaternion_slerp.from_quaternion"
+                },
+                {
+                    "source": "get_geo_property.data",
+                    "target": "multiply_quaternions.second"
+                },
+                {
+                    "source": "get_point_position.point_position",
+                    "target": "subtract.first.point_position"
+                },
+                {
+                    "source": "if.output",
+                    "target": "create_instances.points"
+                },
+                {
+                    "source": "if.output",
+                    "target": ".out_points"
+                },
+                {
+                    "source": "multiply_quaternions.quaternion",
+                    "target": "quaternion_slerp.to_quaternion"
+                },
+                {
+                    "source": "quaternion_slerp.interpolated",
+                    "target": "set_geo_property.data"
+                },
+                {
+                    "source": "set_geo_property.out_geometry",
+                    "target": "cull_points.points"
+                },
+                {
+                    "source": "set_geo_property.out_geometry",
+                    "target": "if.false_case"
+                },
+                {
+                    "source": "subtract.output",
+                    "target": "cross.first"
+                },
+                {
+                    "source": ".points",
+                    "target": "get_geo_property.geometry"
+                },
+                {
+                    "source": ".points",
+                    "target": "set_geo_property.geometry"
+                },
+                {
+                    "source": ".points",
+                    "target": "get_point_position.geometry"
+                },
+                {
+                    "source": ".fraction",
+                    "target": "quaternion_slerp.fraction"
+                },
+                {
+                    "source": ".fraction",
+                    "target": "cull_points.weights"
+                },
+                {
+                    "source": ".manipulator_position",
+                    "target": "subtract.first.manipulator_position"
+                },
+                {
+                    "source": ".rotation_vector",
+                    "target": "cross.second"
+                },
+                {
+                    "source": ".degrees",
+                    "target": "degrees_to_radians.degrees"
+                },
+                {
+                    "source": ".length",
+                    "target": "create_mesh_cube.length"
+                },
+                {
+                    "source": ".width",
+                    "target": "create_mesh_cube.width"
+                },
+                {
+                    "source": ".height",
+                    "target": "create_mesh_cube.height"
+                },
+                {
+                    "source": ".cull_points",
+                    "target": "if.condition"
+                },
+                {
+                    "source": ".cull_sharpness",
+                    "target": "multiply.first.fraction"
+                }
+            ],
+            "values": [
+                {
+                    "valueName": "axis_angle_to_quaternion.axis",
+                    "valueType": "Math::float3",
+                    "value": {
+                        "x": "1f",
+                        "y": "0f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "valueName": "create_instances.selection_mode",
+                    "valueType": "Modeling::Points::CreateInstancesSelectionMode",
+                    "value": "Sequential"
+                },
+                {
+                    "valueName": "create_instances.seed",
+                    "valueType": "long",
+                    "value": "354"
+                },
+                {
+                    "valueName": "create_instances.probability_curve",
+                    "valueType": "Amino::FCurve",
+                    "value": {
+                        "version": "1",
+                        "preExtrapolation": "0",
+                        "postExtrapolation": "0",
+                        "points": [
+                            {
+                                "point": {
+                                    "locked": "1",
+                                    "interpolation": "1",
+                                    "pcn": {
+                                        "xp": "-0.63807499999999995",
+                                        "yp": "-0.180645",
+                                        "x": "0",
+                                        "y": "0",
+                                        "xn": "0.63807499999999995",
+                                        "yn": "0.180645"
+                                    }
+                                }
+                            },
+                            {
+                                "point": {
+                                    "locked": "1",
+                                    "interpolation": "1",
+                                    "pcn": {
+                                        "xp": "0.67824300000000004",
+                                        "yp": "0.91612899999999997",
+                                        "x": "1",
+                                        "y": "1",
+                                        "xn": "1.3217570000000001",
+                                        "yn": "1.083871"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "valueName": "create_instances.instance_id_override",
+                    "valueType": "array<long>",
+                    "value": []
+                },
+                {
+                    "valueName": "create_instances.preview_mode",
+                    "valueType": "Modeling::Points::CreateInstancesPreviewGeometry",
+                    "value": "PreviewGeometry"
+                },
+                {
+                    "valueName": "create_mesh_cube.length",
+                    "valueType": "float",
+                    "value": "2f"
+                },
+                {
+                    "valueName": "create_mesh_cube.width",
+                    "valueType": "float",
+                    "value": "10f"
+                },
+                {
+                    "valueName": "create_mesh_cube.height",
+                    "valueType": "float",
+                    "value": "66.1999969f"
+                },
+                {
+                    "valueName": "create_mesh_cube.position",
+                    "valueType": "Math::float3",
+                    "value": {
+                        "x": "0f",
+                        "y": "0f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "valueName": "create_mesh_cube.up_axis",
+                    "valueType": "Math::float3",
+                    "value": {
+                        "x": "0f",
+                        "y": "1f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "valueName": "create_mesh_cube.base_to_pivot",
+                    "valueType": "bool",
+                    "value": "true"
+                },
+                {
+                    "valueName": "cross.second",
+                    "valueType": "Math::float3",
+                    "value": {
+                        "x": "0f",
+                        "y": "-1f",
+                        "z": "0f"
+                    }
+                },
+                {
+                    "valueName": "cull_points.probability",
+                    "valueType": "float",
+                    "value": "1f"
+                },
+                {
+                    "valueName": "cull_points.seed",
+                    "valueType": "long",
+                    "value": "25"
+                },
+                {
+                    "valueName": "cull_points.disable_by_selection",
+                    "valueType": "bool",
+                    "value": "false"
+                },
+                {
+                    "valueName": "cull_points.instance_property",
+                    "valueType": "string",
+                    "value": "point_instance_id"
+                },
+                {
+                    "valueName": "degrees_to_radians.degrees",
+                    "valueType": "float",
+                    "value": "80f"
+                },
+                {
+                    "valueName": "get_geo_property.property",
+                    "valueType": "string",
+                    "value": "point_orientation"
+                },
+                {
+                    "valueName": "get_geo_property.type",
+                    "valueType": "array<Math::float4>",
+                    "value": []
+                },
+                {
+                    "valueName": "if.condition",
+                    "valueType": "bool",
+                    "value": "true"
+                },
+                {
+                    "valueName": "quaternion_slerp.clamp_negative",
+                    "valueType": "bool",
+                    "value": "false"
+                },
+                {
+                    "valueName": "quaternion_slerp.clamp_above_one",
+                    "valueType": "bool",
+                    "value": "false"
+                },
+                {
+                    "valueName": "quaternion_slerp.always_use_shorter_arc",
+                    "valueType": "bool",
+                    "value": "false"
+                },
+                {
+                    "valueName": "quaternion_slerp.use_nlerp_if_closer",
+                    "valueType": "float",
+                    "value": "0f"
+                },
+                {
+                    "valueName": "set_geo_property.property",
+                    "valueType": "string",
+                    "value": "point_orientation"
+                },
+                {
+                    "valueName": "set_geo_property.data",
+                    "valueType": "array<Math::float4>",
+                    "value": []
+                },
+                {
+                    "valueName": "set_geo_property.target",
+                    "valueType": "string",
+                    "value": "point_component"
+                }
+            ],
+            "reservedNodeNames": [
+                {
+                    "name": "input"
+                },
+                {
+                    "name": "input_display"
+                },
+                {
+                    "name": "output"
+                }
+            ]
+        }
+    ]
+}
